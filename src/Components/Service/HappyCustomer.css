@@ -1,0 +1,22 @@
+.customer-stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #EAFEEE;
+    padding: 3rem 2rem;
+
+  }
+  
+  .customer-stat {
+    text-align: left;
+  }
+  
+  .customer-stat p {
+    font-size: 2rem;
+  }
+  .customer-stat h3{
+    color: #58AA1B;
+    font-weight: 500;
+  }
+  
+ 

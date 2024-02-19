@@ -1,0 +1,21 @@
+.sponsor-parent{
+   margin-top: 10px;
+    border-top: 1px solid gray;
+    display: flex;
+    justify-content: center;
+}
+.sponsor-container{
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5rem;
+    margin: 5rem 0;
+}
+.sponsor-container img{
+    opacity: 50%;
+    transition: 0.2s ease-in;
+}
+.sponsor-container img:hover{
+    opacity: 100%;
+}

@@ -1,0 +1,38 @@
+.letterparent {
+  display: flex;
+  justify-content: center;
+  background-color: #58aa1b;
+}
+.newsparent {
+  display: flex;
+  color: white;
+  width: 80vw;
+    gap: 10px;
+    justify-content: space-between
+    ;
+  align-items: center;
+  padding: 5rem 0rem;
+}
+.subscription input{
+    padding: 15px;
+    width: 550px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+}
+.subs-input{
+    position: relative;
+}
+.letter p{
+    font-size: 18px;
+}
+.subscription button{
+    padding: 15px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: #ff6251;
+    position: absolute;
+    right: 0%;
+}

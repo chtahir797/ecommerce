@@ -1,0 +1,66 @@
+.cards-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.cards {
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid rgb(181, 181, 181);
+}
+
+
+.individual-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 230px;
+  height: 200px;
+  gap: 1rem;
+  /* padding: 15px; */
+}
+.allcarddata{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.individual-card::after {
+  content: "";
+  height: 50%;
+  border: 1px solid rgb(199, 195, 195);
+}
+
+.individual-card .img {
+  text-align: center;
+}
+
+.individual-card img {
+  width: 25%;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  text-align: center;
+}
+
+.heading {
+  text-align: center;
+  font-size: 14px;
+}
+
+.description {
+  text-align: center;
+  font-size: 11px;
+}
+.individual-card:active {
+  background-color: #51AA1B;
+}
+.selected-card {
+  background-color: #51AA1B;
+}
+.product-found{
+  text-align: center;
+}
