@@ -32,7 +32,7 @@ const Catagories = () => {
     setSelectCatagory(id);
     setProductID(id)
   };
-
+  console.log("Product ID is: ", productID)
   return (
     <>
       <div className="cards-parent">
@@ -41,12 +41,18 @@ const Catagories = () => {
              <div class="lds-facebook"><div></div><div></div><div></div></div>
           ) : (
             catagories.map((value) => {
-              const isSelected = selectCatagory === value.id; // Check if card is selected
+              let isSelected = null
+              if(selectCatagory  === value.id ){
+                isSelected = true
+              } else{
+                isSelected = false
+              }
+              
               return (
                 <div
                   key={value.id}
                   className={`individual-card ${
-                    isSelected ? "selected-card" : ""
+                    isSelected || value.id==productID ? "selected-card" : ""
                   }`}
                   onClick={() => changingCatagory(value.id)}
                 >
