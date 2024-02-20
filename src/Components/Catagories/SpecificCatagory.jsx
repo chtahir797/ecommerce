@@ -1,15 +1,16 @@
 import "./SpecificCatagory.css";
-import ShowMoreProducts from "./ShowMoreProducts";
 import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { GlobalData } from "../../Context/ProductContext";
+import { Link } from "react-router-dom";
 const SpecificCatagory = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [specificCatagory, setSpecificCatagory] = useState([]);
   const { productID } = useContext(GlobalData);
-  const [length, setLength] = useState(5)
-  const [showButton, setShowButton] = useState(true)
-
+  const [length, setLength] = useState(5);
+  const [showButton, setShowButton] = useState(true);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const { productDetails, setProductDetails } = useContext(GlobalData);
   useEffect(() => {
     const getCatagory = async () => {
       try {
@@ -26,18 +27,26 @@ const SpecificCatagory = () => {
     };
     getCatagory();
   }, [productID]);
-  console.log(productID);
+  console.log("Selected Product is: ", selectedProduct);
   const ShowMore = () => {
-    setShowButton(!showButton)
-    setLength((pre)=>{
-      if(pre === 5){
-        setLength(100)
-      } else{
-        setLength(5)
+    setShowButton(!showButton);
+    setLength((pre) => {
+      if (pre === 5) {
+        setLength(100);
+      } else {
+        setLength(5);
       }
-    })
+    });
   };
-  console.log('Length is: ', length)
+
+  const openProduct = (id) => {
+    console.log("Product id is: ", id);
+    const product = specificCatagory.find((product) => product.id === id);
+    setSelectedProduct(product);
+    setProductDetails(product)
+    
+  };
+  console.log("Length is: ", length);
   return (
     <div className="product-parent">
       <div className="product-container">
@@ -56,7 +65,7 @@ const SpecificCatagory = () => {
         ) : (
           specificCatagory
             .map((product) => (
-              <div key={product.id}>
+              <div key={product.id} onClick={() => openProduct(product.id)}>
                 <div className="product-card">
                   <img
                     src={`https://inamstore.devblinks.com/storage/${product.image}`}
@@ -64,6 +73,7 @@ const SpecificCatagory = () => {
                   />
                   <h3>{product.name}</h3>
                   <p>Price: ${product.price}</p>
+                  <Link to={`/products/${product.id}`}>View Details</Link>
                 </div>
               </div>
             ))
@@ -71,8 +81,11 @@ const SpecificCatagory = () => {
         )}
       </div>
       <div className="button">
-        <button onClick={ShowMore}>{showButton ? 'Show More' : 'Show Less'}</button>
+        <button onClick={ShowMore}>
+          {showButton ? "Show More" : "Show Less"}
+        </button>
       </div>
+      {/* {selectedProduct && <SingleProduct product={selectedProduct} />} */}
     </div>
   );
 };

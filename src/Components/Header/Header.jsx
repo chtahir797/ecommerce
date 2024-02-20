@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import cart from "../../assets/cart.svg";
 import Logo from "../../assets/Logo.png";
 import  axios  from "axios";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [search, setSearch] = useState("");
   const [catagories, setCatagories] = useState([]);
@@ -61,7 +62,10 @@ const Header = () => {
           </div>
 
           <div className="cart">
+            <Link to="/addtocart">
             <img src={cart} alt="cart-vector" />
+            </Link>
+            
           </div>
         </div>
       </div>
