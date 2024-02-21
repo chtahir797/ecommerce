@@ -49,7 +49,7 @@ const SpecificCatagory = () => {
   console.log("Length is: ", length);
   return (
     <div className="product-parent">
-      <div className="product-container">
+      <div className="products-container">
         {isLoading ? (
           <div className="product-found">
             <div class="lds-facebook">
