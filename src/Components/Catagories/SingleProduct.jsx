@@ -3,11 +3,11 @@ import "./SingleProduct.css";
 import { GlobalData } from "../../Context/ProductContext";
 const SingleProduct = () => {
   const { productDetails } = useContext(GlobalData); // getting product detail
-  const { setCartData} = useContext(GlobalData); // getting product detail
-  const [setProductData] = useState(null); //saving product detail and passing it to addtocart function
-  // console.log("Displaying product data", productDetails);
+  const { cartData, setCartData} = useContext(GlobalData); // getting product detail
+  const [productData, setProductData] = useState(null); //saving product detail and passing it to addtocart function
+  console.log("Displaying product data", productDetails);
   const product = productDetails; // passing tit to state productData
-  // console.log("Product Data : ", product);
+  console.log("Product Data : ", product);
   const [quantity, setQuantity] = useState(0); // Checking quantity
 
   //increasing quantity
@@ -37,7 +37,7 @@ const SingleProduct = () => {
     }
 
   };
-  // console.log("My Product Details are: ", productData);
+  console.log("My Product Details are: ", productData);
   // console.log("Prodect adding : ", quantity)
   return (
     <>
@@ -54,14 +54,13 @@ const SingleProduct = () => {
           <p>Minimum Quantity: {productDetails.min_qty}</p>
           {productDetails.bulk_price_available && (
             <div>
-              <p>Bulk Price: ${productDetails.bulk_price}</p>
-              <p>Bulk Quantity: {productDetails.bulk_qty}</p>
+              <p>Bulk Price: ${productDetails.bulk_price || "Not available"}</p>
+              <p>Bulk Quantity: {productDetails.bulk_qty || "Not available"}</p>
             </div>
           )}
           <button onClick={addToCart}>Add to Cart</button>
           
           <button onClick={Decreasing}>-</button>
-
           <button onClick={Increasing}>+</button>
         </div>
       </div>
