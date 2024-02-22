@@ -3,7 +3,7 @@ import "./Nav.css";
 import { Link } from "react-router-dom";
 import List from "../../assets/list.svg";
 import axios from "axios";
-import { GlobalData } from '../../Context/ProductContext';	
+import { GlobalData } from "../../Context/ProductContext";
 
 const Nav = () => {
   //context
@@ -22,13 +22,13 @@ const Nav = () => {
 
   const Clicked = (e) => {
     console.log("Clicked", e.target.value);
-    setProductID(e.target.value)
+    setProductID(e.target.value);
+    window.scrollTo({ top: 700, behavior: "smooth" });
   };
 
   return (
     <>
       <div className="nav-container">
-
         <div className="dropdown">
           <div className="list">
             <img src={List} alt="list SVG" />
@@ -38,13 +38,14 @@ const Nav = () => {
             <select onChange={Clicked} value={productID}>
               <option>All Catagories</option>
               {catagories.map((value, index) => {
-                return <option key={index}  value={value.id} >{value.value}</option>;
+                return (
+                  <option key={index} value={value.id}>
+                    {value.value}
+                  </option>
+                );
               })}
             </select>
           </div>
-
-
-
         </div>
 
         <div className="nav-bar">

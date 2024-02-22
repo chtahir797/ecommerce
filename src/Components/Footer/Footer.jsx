@@ -61,7 +61,7 @@ const Footer = () => {
 
 
         <div className="footer-child2">
-            <button>Back To Top</button>
+            <button onClick={()=>{window.scrollTo({ top: 0, behavior: "smooth" })}}>Back To Top</button>
         </div>
       </div>
     </>

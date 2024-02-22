@@ -60,6 +60,7 @@
 }
 .selected-card {
   background-color: #51AA1B;
+  color: #fff;
 }
 .product-found{
   text-align: center;

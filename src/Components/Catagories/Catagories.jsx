@@ -4,9 +4,9 @@ import SpecificCatagory from "./SpecificCatagory";
 import "./Catagories.css";
 import { GlobalData } from '../../Context/ProductContext';	
 const Catagories = () => {
-  const [catagories, setCatagories] = useState([]);
-  const [selectCatagory, setSelectCatagory] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [catagories, setCatagories] = useState([]); // Stores all the catagories comming from api
+  const [selectCatagory, setSelectCatagory] = useState(null);// check ehich catagorie is selected
+  const [isLoading, setIsLoading] = useState(true); //Loading State
   const { productID, setProductID } = useContext(GlobalData);
   const image = `https://inamstore.devblinks.com/storage/`;
 
@@ -32,7 +32,7 @@ const Catagories = () => {
     setSelectCatagory(id);
     setProductID(id)
   };
-  console.log("Product ID is: ", productID)
+  // console.log("Product ID is: ", productID)
   return (
     <>
       <div className="cards-parent">
@@ -41,18 +41,12 @@ const Catagories = () => {
              <div class="lds-facebook"><div></div><div></div><div></div></div>
           ) : (
             catagories.map((value) => {
-              let isSelected = null
-              if(selectCatagory  === value.id ){
-                isSelected = true
-              } else{
-                isSelected = false
-              }
-              
+          
               return (
                 <div
                   key={value.id}
                   className={`individual-card ${
-                    isSelected || value.id==productID ? "selected-card" : ""
+                    value.id == productID ? "selected-card" : ""
                   }`}
                   onClick={() => changingCatagory(value.id)}
                 >
