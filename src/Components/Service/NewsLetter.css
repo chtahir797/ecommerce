@@ -7,32 +7,41 @@
   display: flex;
   color: white;
   width: 80vw;
-    gap: 10px;
-    justify-content: space-between
-    ;
+  gap: 10px;
+  justify-content: space-between;
   align-items: center;
   padding: 5rem 0rem;
 }
-.subscription input{
-    padding: 15px;
-    width: 550px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
+.subscription input {
+  padding: 15px;
+  width: 30vw;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+.subs-input {
+  position: relative;
+}
+.letter p {
+  font-size: 18px;
+}
+.subscription button {
+  padding: 15px;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: #ff6251;
+  position: absolute;
+  right: 0%;
+}
 
-}
-.subs-input{
-    position: relative;
-}
-.letter p{
-    font-size: 18px;
-}
-.subscription button{
-    padding: 15px;
-    outline: none;
-    border: none;
-    color: white;
-    background-color: #ff6251;
-    position: absolute;
-    right: 0%;
+@media (max-width: 768px) {
+  .newsparent {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .subscription input {
+    width: 50vw;
+  }
 }

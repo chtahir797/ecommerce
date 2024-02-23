@@ -1,22 +1,26 @@
 .customer-stats-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #EAFEEE;
-    padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #eafeee;
+  padding: 3rem 2rem;
+}
 
+.customer-stat {
+  text-align: left;
+}
+
+.customer-stat p {
+  font-size: 2rem;
+}
+.customer-stat h3 {
+  color: #58aa1b;
+  font-weight: 500;
+}
+
+@media (max-width: 760px) {
+  .customer-stats-container {
+    display: flex;
+flex-wrap: wrap;
   }
-  
-  .customer-stat {
-    text-align: left;
-  }
-  
-  .customer-stat p {
-    font-size: 2rem;
-  }
-  .customer-stat h3{
-    color: #58AA1B;
-    font-weight: 500;
-  }
-  
- 
+}

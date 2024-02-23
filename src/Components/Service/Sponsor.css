@@ -19,3 +19,8 @@
 .sponsor-container img:hover{
     opacity: 100%;
 }
+@media (max-width: 768px) {
+    .sponsor-container img{
+        width: 50%;
+    }
+  }
