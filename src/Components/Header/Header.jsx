@@ -2,14 +2,14 @@ import "./Header.css";
 import { useState, useEffect, useContext } from "react";
 import cart from "../../assets/cart.svg";
 import Logo from "../../assets/Logo.png";
-import  axios  from "axios";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { GlobalData } from "../../Context/ProductContext";
 const Header = () => {
   const [search, setSearch] = useState("");
   const [catagories, setCatagories] = useState([]);
   const { cartData } = useContext(GlobalData);
-  const getLength = cartData.length || ""
+  const getLength = cartData.length || "";
   useEffect(() => {
     const getCatagories = async () => {
       const allCatagories = await axios
@@ -32,13 +32,11 @@ const Header = () => {
     <>
       <div className="headers-parent">
         <div className="header-parent">
-
           <div className="logo">
             <img src={Logo} alt="Logo Image" />
           </div>
 
           <div className="search">
-
             <div className="searchbox">
               <input
                 type="text"
@@ -60,16 +58,13 @@ const Header = () => {
             <div className="button">
               <button>Submit</button>
             </div>
-
           </div>
 
           <div className="cart">
-
             <Link to="/addtocart">
-
-            <img src={cart} alt="cart-vector" />
+              <img src={cart} alt="cart-vector" />
             </Link>
-            
+
             <span>{getLength}</span>
           </div>
         </div>

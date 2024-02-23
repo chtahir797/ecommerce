@@ -29,7 +29,7 @@ const Cart = () => {
     <>
       <div className="cart-container">
         <h1>Shopping Cart</h1>
-        <div class="cart-product">
+        <div className="cart-product">
           <table>
             <thead>
               <tr>
@@ -53,7 +53,7 @@ const Cart = () => {
                     <p>{item.name}</p>
                   </td>
                   <td>
-                    <p>Price: ${item.price * count[item.id] || item.price}</p>
+                    <p>Price: ${item.price }</p>
                   </td>
                   <td>
                     <button onClick={() => Remove(item.id)}>-</button>
@@ -67,10 +67,7 @@ const Cart = () => {
                 <td colspan="4">Total</td>
                 <td>
                   $
-                  {cartData.reduce(
-                    (total, value) => total + value.price * count[value.id],
-                    0
-                  )}
+                  {cartData.reduce((total, value) => total + value.price * (count[value.id] || 1), 0)}
                 </td>
               </tr>
             </tbody>

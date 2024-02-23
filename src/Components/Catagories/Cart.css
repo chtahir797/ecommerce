@@ -1,12 +1,10 @@
-
+/* 
 .cart-container {
     width: 80%;
     margin: auto;
     padding: 20px;
     background-color: #f9f9f9;
 }
-/* New  */
-
 .cart-product {
     margin: 20px;
   }
@@ -15,11 +13,13 @@
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
+    border: 1px solid gray;
   }
   
   th, td {
     padding: 10px;
     text-align: left;
+    border: 1px solid gray;
   }
   
   thead {
@@ -39,17 +39,129 @@
     cursor: pointer;
     padding: 5px 10px;
     border: none;
-    background-color: #007bff;
-    color: #fff;
+    color: #000000;
     border-radius: 3px;
+    font-size: 1.5rem;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #51aa1b;
+    color: #f9f9f9;
   }
   
   h1 {
     display: inline-block;
     margin: 0 10px;
+  }
+   */
+
+
+
+   /* General styles */
+.cart-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .cart-product {
+    margin: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid gray;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid gray;
+  }
+  
+  thead {
+    background-color: #f2f2f2;
+  }
+  
+  th {
+    background-color: #ddd;
+  }
+  
+  .cart-item img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  .cart-item button {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    color: #000000;
+    border-radius: 3px;
+    font-size: 1.5rem;
+  }
+  
+  button:hover {
+    background-color: #51aa1b;
+    color: #f9f9f9;
+  }
+  
+  h1 {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .cart-container {
+      width: 90%;
+      padding: 10px;
+    }
+    
+    .cart-item img {
+      max-width: 80px;
+    }
+    
+    th, td {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+    
+    .cart-item button {
+      padding: 4px 8px;
+      font-size: 1rem;
+    }
+    
+    h1 {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .cart-container {
+        width: 100%;
+        padding: 5px;
+        font-size: 0.5rem;
+      }
+    .cart-item img {
+      max-width: 60px;
+    }
+    
+    th, td {
+      padding: 6px;
+      font-size: 0.8rem;
+    }
+    
+    .cart-item button {
+      padding: 3px 6px;
+      font-size: 0.9rem;
+    }
+    
+    h1 {
+      font-size: 1rem;
+    }
   }
   
