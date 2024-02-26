@@ -1,167 +1,138 @@
-/* 
 .cart-container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background-color: #f9f9f9;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 .cart-product {
-    margin: 20px;
-  }
+  margin: 20px;
+}
+.cart-item img {
+  max-width: 100px;
+  height: auto;
+}
+
+.cart-item button {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: none;
+  color: #000000;
+  border-radius: 3px;
+  /* font-size: 1.5rem; */
+}
+
+button:hover {
+  background-color: #51aa1b;
+  color: #f9f9f9;
+}
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+.deleteButton button {
+  display: block;
+  font-size: 1em;
+  height: 2em;
+  width: 2em;
+  text-align: center;
+  line-height: 1;
+  border-radius: 100%;
+  color: red;
+  text-decoration: none;
+  font-weight: 700;
+  border: 0;
+}
+
+.deleteButton button:hover {
+  color: rgb(255, 255, 255);
+  background-color: red;
+}
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
   
+}
+.quantity table{
+  width: 100%;
+}
+.quantity table td:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 878px) {
   table {
+    border: 0px;
     width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    border: 1px solid gray;
   }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid gray;
-  }
-  
-  thead {
-    background-color: #f2f2f2;
-  }
-  
-  th {
-    background-color: #ddd;
-  }
-  
-  .cart-item img {
-    max-width: 100px;
-    height: auto;
-  }
-  
-  .cart-item button {
-    cursor: pointer;
-    padding: 5px 10px;
+
+  table thead {
     border: none;
-    color: #000000;
-    border-radius: 3px;
-    font-size: 1.5rem;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
   }
-  
-  button:hover {
-    background-color: #51aa1b;
-    color: #f9f9f9;
-  }
-  
-  h1 {
-    display: inline-block;
-    margin: 0 10px;
-  }
-   */
 
 
 
-   /* General styles */
-.cart-container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    background-color: #f9f9f9;
+  table td {
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
   }
-  
-  .cart-product {
-    margin: 20px;
+
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
   }
-  
-  table {
+  table th,
+  table td {
+    border: 1px solid #ddd;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+  .quantity table td{
+    border: 1px solid #ccc;
     width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    border: 1px solid gray;
+    text-align: center;
+    outline: none;
   }
-  
-  th, td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid gray;
+  .quantity table tr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0;
   }
-  
-  thead {
-    background-color: #f2f2f2;
-  }
-  
-  th {
-    background-color: #ddd;
-  }
-  
-  .cart-item img {
-    max-width: 100px;
-    height: auto;
-  }
-  
-  .cart-item button {
-    cursor: pointer;
-    padding: 5px 10px;
-    border: none;
-    color: #000000;
-    border-radius: 3px;
-    font-size: 1.5rem;
-  }
-  
-  button:hover {
-    background-color: #51aa1b;
-    color: #f9f9f9;
-  }
-  
-  h1 {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  
-  /* Responsive styles */
-  @media screen and (max-width: 768px) {
-    .cart-container {
-      width: 90%;
-      padding: 10px;
-    }
-    
-    .cart-item img {
-      max-width: 80px;
-    }
-    
-    th, td {
-      padding: 8px;
-      font-size: 0.9rem;
-    }
-    
-    .cart-item button {
-      padding: 4px 8px;
-      font-size: 1rem;
-    }
-    
-    h1 {
-      font-size: 1.2rem;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .cart-container {
-        width: 100%;
-        padding: 5px;
-        font-size: 0.5rem;
-      }
-    .cart-item img {
-      max-width: 60px;
-    }
-    
-    th, td {
-      padding: 6px;
-      font-size: 0.8rem;
-    }
-    
-    .cart-item button {
-      padding: 3px 6px;
-      font-size: 0.9rem;
-    }
-    
-    h1 {
-      font-size: 1rem;
-    }
-  }
-  
+}
