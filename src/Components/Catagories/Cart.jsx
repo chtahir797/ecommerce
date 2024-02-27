@@ -97,7 +97,7 @@ const Cart = () => {
       </div>
     </div>
     ): (
-      <div className="empty" style={{textAlign:'center',color:'red'}}>
+      <div className="empty" style={{textAlign:'center',color:'#58AA1B'}}>
         <p>Your cart is currently empty.</p>
       </div>
     )}

@@ -43,14 +43,14 @@ const SpecificCatagory = () => {
     console.log("Product id is: ", id);
     const product = specificCatagory.find((product) => product.id === id);
     setSelectedProduct(product);
-    setProductDetails(product)
-    
+    setProductDetails(product);
   };
   console.log("Length is: ", length);
   return (
     <div className="product-parent">
-      <div className="products-container">
+      {/* <div className="products-container"> */}
         {isLoading ? (
+          
           <div className="product-found">
             <div class="lds-facebook">
               <div></div>
@@ -63,29 +63,33 @@ const SpecificCatagory = () => {
             <p>No products found</p>
           </div>
         ) : (
-          specificCatagory
-            .map((product) => (
-              <div key={product.id} onClick={() => openProduct(product.id)}>
-                <div className="product-card">
-                  <img
-                    src={`https://inamstore.devblinks.com/storage/${product.image}`}
-                    alt={product.name}
-                  />
-                  <h3>{product.name}</h3>
-                  <p>Price: ${product.price}</p>
-                  <Link to={`/products/${product.id}`}>View Details</Link>
+          <>
+          <div className="products-container">
+            {specificCatagory
+              .map((product) => (
+                <div key={product.id} onClick={() => openProduct(product.id)}>
+                  <div className="product-card">
+                    <img
+                      src={`https://inamstore.devblinks.com/storage/${product.image}`}
+                      alt={product.name}
+                    />
+                    <h3>{product.name}</h3>
+                    <p>Price: ${product.price}</p>
+                    <Link to={`/products/${product.id}`}>View Details</Link>
+                  </div>
                 </div>
+              ))
+              .slice(0, length)}
               </div>
-            ))
-            .slice(0, length)
-        )}
-      </div>
-      <div className="button">
+              <div className="button">
         <button onClick={ShowMore}>
           {showButton ? "Show More" : "Show Less"}
         </button>
       </div>
-      {/* {selectedProduct && <SingleProduct product={selectedProduct} />} */}
+          </>
+        )}
+      {/* </div> */}
+      
     </div>
   );
 };
